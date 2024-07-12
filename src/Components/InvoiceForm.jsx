@@ -79,11 +79,7 @@ function InvoiceForm({ handleAddInvoice, fields }) {
               </label>
               <input
                 id={field.accessor}
-                disabled={
-                  field.accessor === "totalPrice" ||
-                  field.accessor === "discount" ||
-                  field.accessor === "tax"
-                }
+                disabled={!field.editable}
                 type="number"
                 value={formData[field.accessor]}
                 onChange={handleChange}
