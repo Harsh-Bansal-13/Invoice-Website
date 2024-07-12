@@ -56,15 +56,17 @@ function App() {
         <br></br>
         <InvoiceForm handleAddInvoice={handleAddInvoice} fields={fields} />
       </div>{" "}
-      <div className="w-full flex flex-col gap-5 bg-slate-200 rounded-lg shadow-lg">
-        <h1 className="text-center text-gray-800 font-sans text-[2.5rem] font-bold mt-5 text-2xl">
+      <div className="w-full flex flex-col gap-5 bg-slate-200 rounded-lg shadow-lg justify-center py-2">
+        <h1 className="text-center text-gray-800 font-sans text-[2.5rem] font-bold text-2xl">
           Invoices
         </h1>
-        <InvoiceGrid
-          invoices={invoices}
-          setInvoices={setInvoices}
-          fields={fields}
-        />
+        {invoices.length > 0 && (
+          <InvoiceGrid
+            invoices={invoices}
+            setInvoices={setInvoices}
+            fields={fields}
+          />
+        )}
       </div>
     </div>
   );
