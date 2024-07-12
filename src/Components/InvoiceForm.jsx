@@ -70,29 +70,28 @@ function InvoiceForm({ handleAddInvoice, fields }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="flex flex-col gap-4 items-center justify-center p-6">
-        {fields.map((field) => (
-          <div
-            className="w-full grid md:grid-cols-5 gap-2"
-            key={field.accessor}
-          >
-            <label className="flex mb-1 text-gray-700 items-center ">
-              {field.name}
-            </label>
-            <input
-              id={field.accessor}
-              disabled={
-                field.accessor === "totalPrice" ||
-                field.accessor === "discount" ||
-                field.accessor === "tax"
-              }
-              type="number"
-              value={formData[field.accessor]}
-              onChange={handleChange}
-              className="w-full p-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-orange-500 col-span-4"
-            />
-          </div>
-        ))}
+      <div className="felx flex-col items-center justify-center p-6">
+        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-center justify-center p-6 w-full ">
+          {fields.map((field) => (
+            <div className="w-full flex flex-col gap-2 " key={field.accessor}>
+              <label className="flex mb-1 text-gray-700 items-center ">
+                {field.name}
+              </label>
+              <input
+                id={field.accessor}
+                disabled={
+                  field.accessor === "totalPrice" ||
+                  field.accessor === "discount" ||
+                  field.accessor === "tax"
+                }
+                type="number"
+                value={formData[field.accessor]}
+                onChange={handleChange}
+                className="w-full p-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-gray-500"
+              />
+            </div>
+          ))}
+        </div>
         <button
           type="submit"
           className={`w-full py-2 mt-4 text-white rounded-lg ${backgroundColor} ${hoverBackgroundColor}`}
