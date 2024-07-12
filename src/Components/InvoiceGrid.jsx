@@ -189,9 +189,9 @@ function InvoiceGrid({ invoices, setInvoices, fields }) {
           Invalid input.
           <button
             onClick={handleSnackbarClose}
-            className="ml-2 bg-transparent border-0 text-white cursor-pointer"
+            className="ml-2 bg-transparent border-0 text-white cursor-pointer text-sm absolute top-1 right-1"
           >
-            X
+            <i class="fi fi-rr-circle-xmark"></i>
           </button>
         </div>
       )}
