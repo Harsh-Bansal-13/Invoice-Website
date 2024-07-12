@@ -140,7 +140,7 @@ function InvoiceGrid({ invoices, setInvoices, fields }) {
                         Number(e.target.value)
                       )
                     }
-                    className={styles.textField}
+                    className={`${styles.textField} w-full`}
                   />
                 ) : (
                   value
